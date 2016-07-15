@@ -1,0 +1,21 @@
+Compilar
+
+	Ubicarse en la carpeta contenedora mediante el terminal y ejecutar:
+
+		javac *.java
+
+Ejecutar
+	
+	Primero se debe habilitar el servicio rmi en cada esclavo y maestro:
+
+		rmiregistry &
+
+	Luego se debe ejecutar en primera istancia un esclavo a través de su servidor
+
+		java MonteCarloSlaveServer
+
+	Finalmente, luego de tener 1 o más esclavos activos, iniciamos el servidor maestro
+
+		java MonteCarloAgentServer ip_esclavo_1 ip_esclavo_2 ...  ip_esclavo_n repeticion_ejecucion_programa repeticion_simulacion_esclavo tablero.tbl
+
+	Para volver a ejecutar la simulacion completa, se debe cerrar el agente actual con ctrl+c e inciar de nuevo.
